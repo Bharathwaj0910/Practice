@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Registration Form in HTML </title>
+      <link rel="stylesheet" type="text/css" href="/static/notify.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+        <div class="wrapper">
+            <div class="title-text">
+                <div class="title login">
+                    Track Price
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="form-inner">
+                    <form method="post" action='{{ url_for("save")}}' class="signup">
+                        <div class="field">
+                           <input type="text" name="product_url" placeholder="Product name" required>
+                        </div>
+                        <div class="field">
+                           <input type="text" name="set_price" placeholder="Price" required>
+                        </div>
+                        <div class="field btn">
+                           <div class="btn-layer"></div>
+                           <input type="submit" value="Track">
+                        </div>
+                        <input type="hidden" name="email" value="{{ email }}">
+                        {% if error %}
+                        <div style ="padding-top:5px ;">
+                        <p style="text-align: center; border-radius: 5%; background-color: rgb(255, 190, 190); color: red; ">{{ error }}</p>
+                        </div>
+                        {% endif %}
+                        {% if msg %}
+                        <div style ="padding-top:5px ;">
+                        <p style="text-align: center; border-radius: 5%; background-color: rgb(187, 247, 176); color: rgb(26, 255, 0); ">{{ msg }}</p>
+                        </div>
+                        {% endif %}
+                     </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

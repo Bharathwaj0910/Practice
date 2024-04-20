@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/robot.png"); /* Replace with path to your image */
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  position: relative;
+  padding: 50px;
+  color: white;
+}
+
+.goind {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.best-naukri-search {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.search-job {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-job input {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.subscribe {
+  background-color: #333;
+}
+
+.discover-more {
+  background-color: #666;
+}
+
+.lorem-ipsum {
+  margin-bottom: 20px;
+}
+
+.lorem-ipsum p {
+  line-height: 1.5;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.navigation-line {
+  width: 30px;
+  height: 5px;
+
+}

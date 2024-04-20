@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar in HTML and CSS</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/home.css" >
+    
+  </head>
+  <body>
+    <form action="/notify" method="post" class="input-box" >
+      <input type="hidden" name="email" value="{{ email }}">
+      <button style="height:50px; width:50px;" type="submit" name="tracker" value="tracker" class="button"></button>
+    </form>
+    <form action="/report" method="post" class="input-box">
+      <i class="uil uil-search"></i>
+      <input type="text" name="query" placeholder="Search here..." />
+      <button type="submit" class="button">Search</button>
+    </form>
+  </body>
+</html>

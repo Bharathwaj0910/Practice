@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Blurred Background</title>
+    <style>
+        /* Style the body */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-image: url("path/to/your/image.jpg");
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px); /* Apply blur filter */
+        }
+
+        /* Style the navigation bar */
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+            position: fixed; /* Fix the navbar to the top */
+            top: 0;
+            width: 100%;
+            padding: 10px 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Style navigation bar links */
+        .navbar a {
+            float: left;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+        }
+
+        /* Style active links (highlight on hover) */
+        .navbar a:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+            color: #f1f1f1;
+        }
+
+        /* Style the price tracker button */
+        .price-tracker {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style the welcome note */
+        .welcome {
+            text-align: center;
+            color: white;
+            margin-top: 50px; /* Adjust margin for spacing */
+        }
+
+        /* Style the search bar */
+        .searchbar {
+            display: flex;
+            margin: 20px auto; /* Center the search bar horizontally */
+            width: 50%;
+        }
+
+        /* Style the search input field */
+        .searchbar input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1; /* Make the input field fill most of the space */
+        }
+
+        /* Style the search button */
+        .searchbar button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Logout</a>
+        <button class="price-tracker">Price Tracker</button>
+    </div>
+
+    <h1 class="welcome">Welcome to your website!</h1>
+
+    <div class="searchbar">
+        <input type="text" placeholder="Search">
+        <button type="button">Search</button>
+    </div>
+
+    </body>
+
+</html>
+
+
