@@ -64,13 +64,15 @@ def get_flipkart_price(product_name):
         flipkart_url = f"https://www.flipkart.com/search?q={product_name.replace(' ', '%20')}"
         title_selector = ".KzDlHZ"
         price_selector = "._4b5DiR"
-        spec_selector = ".rgWa7D"
-        product_links = "a._1fQZEK"
+        spec_selector = "._6NESgJ"
+        product_links = "a.CGtC98"
         flipkart_driver.get(flipkart_url)
         WebDriverWait(flipkart_driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR,title_selector)))
         WebDriverWait(flipkart_driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, price_selector)))
+        #WebDriverWait(flipkart_driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, spec_selector)))
         WebDriverWait(flipkart_driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, product_links)))
         title = flipkart_driver.find_elements(By.CSS_SELECTOR,title_selector)
+
         price = flipkart_driver.find_elements(By.CSS_SELECTOR, price_selector)
         specs = flipkart_driver.find_elements(By.CSS_SELECTOR, spec_selector)
         product_link = flipkart_driver.find_elements(By.CSS_SELECTOR, product_links)
@@ -93,12 +95,13 @@ def get_flipkart_price(product_name):
                             flipkart_driver.quit()  # Close the browser
                             return title_display, price_text,link_url
                 print("No matching product found")
-                return "No matching product found", None 
+                return "No matching product found", None , None
     except Exception as e:
-        print("An error occurred while fetching Flipkart price")
+        print("An error occurred while fetching Flipkart price",e)
         return None, None, None
     finally:
         flipkart_driver.quit() 
+
 
 '''product_name = input("Enter product name: ")
 amazon_title, amazon_price, amazon_link = get_amazon_price(product_name)
