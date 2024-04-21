@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resizable Box Container</title>
+<link rel="stylesheet" href="/static/Amazon_product_card.css">
+</head>
+<body>
+  <div class="navbar">
+    <img src="/Amazon_logo.png" class="img-content" alt="Girl in a jacket" width="160" height="60">
+  </div>
+  <div class="content">
+    {% if amazon_title %}
+      <p>Title: {{ amazon_title }}</p>
+      <p>Price: {{ amazon_price }}</p>
+      <p>Product url: <a href={{ amazon_product_url }}, target="_blank">click me</a></p>
+      {% else %}
+      <p>No matching product found on Amazon.</p>
+    {% endif %}
+  </div>
+</body>
+</html>
+
+
+

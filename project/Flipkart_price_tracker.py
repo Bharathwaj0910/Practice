@@ -19,7 +19,7 @@ def flipkart_price_tracker(product_url):
         price_element = flipkart_driver.find_element(By.CSS_SELECTOR, price_selector)
         price = price_element.text
         if price:
-            return price
+            return price,None
         else:
             return None, "No price found"
     except Exception as e:

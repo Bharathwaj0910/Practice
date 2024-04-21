@@ -1,24 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 body{
-    margin: 0; 
-   height: 100%;
-    
-}
-
-.name_container{
-    display: block;
-    background-color:rgb(116, 92, 252) ;
-}
-.background-content {
-    background-image: url('/robot.png'); 
+    margin: 0;
+    background-image: url('bot.png');
+    background-size: cover;
+    background-position: center top;
+    font-family: 'Open Sans', sans-serif;
+    /*margin: 0; 
+    height: 100%;
+    background-image: url('/bot.png'); 
     background-size: cover;
     background-position: center top;
     height: 100vh; 
     overflow: hidden; 
-    filter: blur(10px);
     padding: 20px;
     background-repeat: no-repeat;
     z-index: -1;
+    font-family: 'Open Sans', sans-serif;*/
     
+}
+
+.container{
+    height: 100vh; 
+    overflow: auto; 
+}
+
+
+.name_container{
+    display: block;
+    background-color:rgb(116, 92, 252) ;
 }
 
 
@@ -46,6 +55,8 @@ body{
     padding: 10px 20px; 
     position: fixed; 
     top: 0; 
+    left: 0;
+    right: 0;
     width: 98%;
     z-index: 999;
 }
@@ -64,7 +75,7 @@ body{
     
 }
 
-.notify input[type="submit"] {
+#price-tracker-btn {
     background-color: rgb(114, 114, 114); 
     color: rgb(0, 0, 0); 
     border: none;
@@ -74,7 +85,7 @@ body{
     transition: box-shadow 0.4s ease,color 0.4s ease; 
 }
 
-.notify input[type="submit"]:hover {
+#price-tracker-btn:hover {
     background-color: #45a049; 
     color: white;
     box-shadow: 0 0 5px 0 rgba(0, 255, 0, 0.5), 
@@ -85,8 +96,127 @@ body{
 
 .welcome-note p {
     display: flex;
-    color: #333; /* Adjust color as needed */
+    color: rgb(255, 255, 255);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
     font-size: 24px;
-    align-content: center;
-    margin-top: 60px; /* Adjust font size as needed */
+    position: relative;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    width: fit-content;
+    z-index: 2; /* Adjust font size as needed */
 }
+
+.search {
+    width: 500px;
+    height: 40px;
+    margin: 150px auto;
+    margin-top: 180px;
+    background: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    border: 1px solid rgb(209, 50, 230);
+    box-shadow: 0px 0px 12px 0px rgb(189, 98, 242);
+}
+.search input {
+    width: 370px;
+    padding: 10px 5px;
+    float: left;
+    color: rgb(255, 255, 255);
+    border: 0;
+    background: transparent;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 3px 0 0 3px;
+}
+.search input:focus {
+    outline: 0;
+    background: transparent;
+}
+.search button {
+    position: relative;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 40px;
+	width: 120px;
+	color: rgb(255, 255, 255);
+    font-size: 20px;
+	background: transparent;
+	border-left: 1px solid #fff;
+	border-radius: 0 3px 3px 0;
+    transition: background-color 0.4s ease;
+}
+ .search button:hover {
+	 background-color: rgb(184, 93, 253);
+	 color: rgb(255, 255, 255);
+}
+ .search button:active {
+	 box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+}
+ .search button:focus {
+	 outline: 0;
+}
+
+.box-container {
+    border: 2px rgba(255, 0, 0, 0.866);
+    box-shadow: 0 0 10px rgb(244, 70, 70);
+    background-color: rgba(255, 5, 5, 0.2);
+    font-weight: bold;
+    color: rgb(205, 205, 205);
+    padding: 20px;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.custom-bullet {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 1em; /* Adjust spacing between bullet point and text */
+}
+.custom-bullet > li:before {
+    content: "\2022"; 
+    color: rgb(124, 61, 251); 
+    font-size: 1.5em; 
+    margin-right: 0.5em; 
+}
+
+.custom-bullet > .custom-tick:before {
+    content: "\2713"; 
+    color: rgb(0, 247, 0); 
+    font-size: 1.5em; 
+    margin-right: 0.5em; 
+}
+
+.custom-bullet > .custom-wrong:before {
+    content: "\274C"; 
+    color: rgb(255, 0, 0); 
+    font-size: 1.5em; 
+    margin-right: 0.5em; 
+}
+
+.iframe-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.iframe-container iframe {
+    width: 45%; /* Adjust as needed */
+    height: 300px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(116, 92, 252);
+    width: fit-content;
+}
+

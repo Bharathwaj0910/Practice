@@ -28,6 +28,7 @@ def get_amazon_price(product_name):
         product_link = amazon_driver.find_elements(By.CSS_SELECTOR, product_links)
         a=product_name.split()
         title_text1=[]
+        pn=product_name
         for i in range(1,len(titles)):
             title_text1.append(titles[i])
         for title, price, link in zip(title_text1, prices,product_link):
@@ -35,6 +36,7 @@ def get_amazon_price(product_name):
             title_display = title.text
             price_text = price.text
             link_url = link.get_attribute('href')
+            tt=title_text.lower()
             print(title_text," - ",price_text)
             if "refurbished" in title_text.lower():
                 continue
@@ -44,8 +46,16 @@ def get_amazon_price(product_name):
                         break
                     elif b.lower() in title_text.lower():
                         if a.index(b) == len(a) - 1:
-                            amazon_driver.quit() 
-                            return title_display, price_text, link_url
+                            if "pro" in tt or "max" in tt or "+" in tt or "lite" in tt:
+                                if "pro" in tt and "pro" in pn or  "lite" in tt and "lite" in pn or "+" in tt and "+" in pn :
+                                    if "max" in tt and "max" in pn or "+" in tt and "+" in pn or "lite" in tt and "lite" in pn or "plus" in tt and "plus" in pn:
+                                        amazon_driver.quit()  # Close the browser
+                                        return title_display, price_text,link_url
+                                    continue
+                                print("hi")
+                                continue
+                            amazon_driver.quit()  
+                            return title_display, price_text,link_url
         print("No matching product found")
         return "No matching product found", None, None
     except Exception as e:
@@ -77,6 +87,7 @@ def get_flipkart_price(product_name):
         specs = flipkart_driver.find_elements(By.CSS_SELECTOR, spec_selector)
         product_link = flipkart_driver.find_elements(By.CSS_SELECTOR, product_links)
         a=product_name.split()
+        pn=product_name.lower()
         for title, price, spec, link in zip(title, price, specs, product_link):
             title_text = title.text.replace(" ", "")
             title_display = title.text
@@ -84,27 +95,36 @@ def get_flipkart_price(product_name):
             spec_text = spec.text.replace(" ", "")
             link_url = link.get_attribute('href')
             print(title_text," - ",price_text," - ",spec_text)
+            tt=title_text.lower()
+            st=spec_text.lower()
             if "refurbished" in title_text.lower():
                 continue
             else:
                 for b in a:
-                    if b.lower() not in title_text.lower() and b.lower() not in spec_text.lower():
+                    if b.lower() not in tt and b.lower() not in st:
                         break
-                    elif b.lower() in title_text.lower() or b.lower() in spec_text.lower():
+                    elif b.lower() in tt or b.lower() in st:
                         if a.index(b) == len(a) - 1:
-                            flipkart_driver.quit()  # Close the browser
+                            if "pro" in tt or "max" in tt or "+" in tt or "lite" in tt:
+                                if "pro" in tt and "pro" in pn or  "lite" in tt and "lite" in pn or "+" in tt and "+" in pn :
+                                    if "max" in tt and "max" in pn or "+" in tt and "+" in pn or "lite" in tt and "lite" in pn or "plus" in tt and "plus" in pn:
+                                        flipkart_driver.quit()  # Close the browser
+                                        return title_display, price_text,link_url
+                                    continue
+                                print("hi")
+                                continue
+                            flipkart_driver.quit()  
                             return title_display, price_text,link_url
-                print("No matching product found")
-                return "No matching product found", None , None
+        print("No matching product found")
+        return "No matching product found", None , None
     except Exception as e:
         print("An error occurred while fetching Flipkart price",e)
         return None, None, None
     finally:
         flipkart_driver.quit() 
 
-
 '''product_name = input("Enter product name: ")
-amazon_title, amazon_price, amazon_link = get_amazon_price(product_name)
+#amazon_title, amazon_price, amazon_link = get_amazon_price(product_name)
 flipkart_title, flipkart_price,flipkart_link = get_flipkart_price(product_name)
 print("Amazon Title:", amazon_title)
 print("Amazon Price:", amazon_price)

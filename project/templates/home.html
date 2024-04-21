@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Bar in HTML and CSS</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/static/home.css" >
-    
-  </head>
-  <body>
-    <form action="/notify" method="post" class="input-box" >
-      <input type="hidden" name="email" value="{{ email }}">
-      <button style="height:50px; width:50px;" type="submit" name="tracker" value="tracker" class="button"></button>
-    </form>
-    <form action="/report" method="post" class="input-box">
-      <i class="uil uil-search"></i>
-      <input type="text" name="query" placeholder="Search here..." />
-      <button type="submit" class="button">Search</button>
-    </form>
-  </body>
-</html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Search Bar in HTML and CSS</title>
+        <link rel="stylesheet" href="/static/home1.css" >
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="nav-links">
+                    <label>Home</label>
+                    <label>about</label>
+                    <label>logout</label>
+                </div>
+                <div class="notify">
+                    <a href='{{ url_for("notify_page")}}'><button id="price-tracker-btn" type="submit" >Price Tracker</button></a>
+                </div>
+            </div>
+            <div class="welcome-note">
+                <p>Welcome to the <br>price comparison<br> </p>
+            </div> 
+            <form class="search" action='{{ url_for("report")}}' method="post"  >
+                <input type="search" placeholder="Search here..." required>
+                <button type="submit" value="Search">Search</button>
+                <input type="hidden" name="email" value="{{ email }}">
+            </form>  
+            <!--<div class="iframe-container">
+                <iframe src="Amazon_product_card.html" id="iframe1"></iframe>
+                <iframe src="https://www.wikipedia.com" id="iframe2"></iframe>
+            </div>-->
+            <div class="box-container">
+                <ul class="custom-bullet">
+                    Important:
+                    <ul class="custom-bullet">
+                        <li>This tool is currently optimized for electronic devices. Searches for other product categories might return inaccurate prices or no results at all.</li>
+                        <li>For best results, be specific! This is a machine learning tool, and it relies heavily on the details you provide. Searching by just the product name can lead to incorrect matches.</li>
+                        <li>Include as many specifications as you know in your search. For example: To find the price of the iPhone 15 Pro Max with 12GB of RAM and 512GB of storage, search for "iPhone 15 Pro Max 12GB 512GB".</li>
+                        <li>Here's how to get the most accurate price:</li>
+                        <ul class="custom-bullet">
+                            <li class="custom-tick">Iphone 15 Pro Max 12Gb 512gb</li>
+                            <li class="custom-wrong">Iphone 15 Pro Max</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </body>

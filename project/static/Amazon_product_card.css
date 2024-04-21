@@ -1,0 +1,25 @@
+.body{
+  background-color: rgb(66, 44, 44);
+}
+
+.navbar {
+  background-color:#0F1111;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  align-items:  center; 
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+.content {
+  text-align: center; /* Center the text */
+  max-width: 80%;
+  justify-content: center;
+  padding-top: 40px; /* Adjust the maximum width as needed */
+}

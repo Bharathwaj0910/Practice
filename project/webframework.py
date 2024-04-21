@@ -308,7 +308,7 @@ def check_prices():
 def recovery_page():
     return render_template('Recovery_page.html')
 
-scheduler.add_job(check_prices, 'interval', minutes=2)
+scheduler.add_job(check_prices, 'interval', hours=2)
 if __name__ == '__main__':
     scheduler.start()
     app.run(debug=True)
