@@ -276,7 +276,7 @@ def check_price_and_send_email(email, product_url, set_price):
     if float(current_price) <= float(set_price):
         conn = sqlite3.connect('users_credentials.db')
         cursor = conn.cursor()
-        cursor.execute("UPDATE users SET notify = ? WHERE email = ?", ( True , email))
+        cursor.execute("UPDATE users SET notify = ? WHERE email = ?", ( False , email))
         conn.commit()
         conn.close()
         send_alert_email(email, product_url, current_price)

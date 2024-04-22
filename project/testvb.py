@@ -11,7 +11,7 @@ cursor = conn.cursor()
 cursor.execute("SELECT * FROM users")
 users = cursor.fetchall()
 for user in users:
-    print(users)
+    print(user)
 
     # Commit the transaction
 conn.commit()

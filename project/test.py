@@ -124,7 +124,7 @@ def get_flipkart_price(product_name):
         flipkart_driver.quit() 
 
 '''product_name = input("Enter product name: ")
-#amazon_title, amazon_price, amazon_link = get_amazon_price(product_name)
+amazon_title, amazon_price, amazon_link = get_amazon_price(product_name)
 flipkart_title, flipkart_price,flipkart_link = get_flipkart_price(product_name)
 print("Amazon Title:", amazon_title)
 print("Amazon Price:", amazon_price)

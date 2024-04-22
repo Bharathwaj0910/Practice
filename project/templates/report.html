@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
-</head>
-<body>
-    <h1>Search Results</h1>
-    <h2>Amazon</h2>
-    {% if amazon_title %}
-    <p>Title: {{ amazon_title }}</p>
-    <p>Price: {{ amazon_price }}</p>
-    <p>Product url: <a href={{ amazon_product_url }}, target="_blank">click me</a></p>
-    {% else %}
-    <p>No matching product found on Amazon.</p>
-    {% endif %}
-    
-    <h2>Flipkart</h2>
-    {% if flipkart_title %}
-    <p>Title: {{ flipkart_title }}</p>
-    <p>Price: {{ flipkart_price }}</p>
-    <p>Product url:<a href={{ flipkart_product_url }}, target="_blank">click me</a></p>
-    {% else %}
-    <p>No matching product found on Flipkart.</p>
-    {% endif %}
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Search Bar in HTML and CSS</title>
+        <link rel="stylesheet" href="/static/report1.css" >
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="nav-links">
+                <a href='{{ url_for("home") }}'><label>Home</label></a>
+                <label>about</label>
+                <a href='{{ url_for("index") }}'><label>logout</label></a>
+            </div>
+            <div class="notify">
+                <form action='{{ url_for("notify_page")}}' method="post">
+                    <button id="price-tracker-btn" type="submit" >Price Tracker</button>
+                    <input type="hidden" name="email" value="{{ email }}">
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <div class="box" id="box1">
+                <div class="navbar-amazon">
+                    <img src="/static/Amazon_logo.png" class="img-content" alt="amazon-logo" width="160" height="60">
+                </div>
+                <div class="content">
+                    {% if amazon_title %}
+                      <p>Title: {{ amazon_title }}</p>
+                      <p>Price: {{ amazon_price }}</p>
+                      <p>Product url: <a href={{ amazon_product_url }}, target="_blank">click me</a></p>
+                      {% else %}
+                      <p>No matching product found on Amazon.</p>
+                    {% endif %}
+                  </div>
+            </div>
+            <div class="box" id="box2">
+                <div class="navbar-flipkart">
+                    <img src="/static/Flipkart_logo.png" class="img-content" alt="amazon-logo" width="160" height="60">
+                </div>
+                <div class="content">
+                    {% if flipkart_title %}
+                    <p>Title: {{ flipkart_title }}</p>
+                    <p>Price: {{ flipkart_price }}</p>
+                    <p>Product url:<a href={{ flipkart_product_url }}, target="_blank">click me</a></p>
+                    {% else %}
+                    <p>No matching product found on Flipkart.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

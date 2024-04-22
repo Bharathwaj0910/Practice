@@ -13,24 +13,22 @@
                 <div class="nav-links">
                     <label>Home</label>
                     <label>about</label>
-                    <label>logout</label>
+                    <a href='{{ url_for("index") }}'><label>logout</label></a>
                 </div>
                 <div class="notify">
-                    <a href='{{ url_for("notify_page")}}'><button id="price-tracker-btn" type="submit" >Price Tracker</button></a>
+                    <form action='{{ url_for("notify_page")}}' method="post">
+                        <a href='{{ url_for("notify_page")}}'><button id="price-tracker-btn" type="submit" >Price Tracker</button></a>
+                        <input type="hidden" name="email" value="{{ email }}">
+                    </form>
                 </div>
             </div>
             <div class="welcome-note">
                 <p>Welcome to the <br>price comparison<br> </p>
             </div> 
             <form class="search" action='{{ url_for("report")}}' method="post"  >
-                <input type="search" placeholder="Search here..." required>
+                <input type="search" name ="query" placeholder="Search here..." required>
                 <button type="submit" value="Search">Search</button>
-                <input type="hidden" name="email" value="{{ email }}">
             </form>  
-            <!--<div class="iframe-container">
-                <iframe src="Amazon_product_card.html" id="iframe1"></iframe>
-                <iframe src="https://www.wikipedia.com" id="iframe2"></iframe>
-            </div>-->
             <div class="box-container">
                 <ul class="custom-bullet">
                     Important:

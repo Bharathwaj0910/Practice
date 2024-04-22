@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <h2>Amazon</h2>
+    {% if amazon_title %}
+    <p>Title: {{ amazon_title }}</p>
+    <p>Price: {{ amazon_price }}</p>
+    <p>Product url: <a href={{ amazon_product_url }}, target="_blank">click me</a></p>
+    {% else %}
+    <p>No matching product found on Amazon.</p>
+    {% endif %}
+    
+    <h2>Flipkart</h2>
+    {% if flipkart_title %}
+    <p>Title: {{ flipkart_title }}</p>
+    <p>Price: {{ flipkart_price }}</p>
+    <p>Product url:<a href={{ flipkart_product_url }}, target="_blank">click me</a></p>
+    {% else %}
+    <p>No matching product found on Flipkart.</p>
+    {% endif %}
+</body>
+</html>
