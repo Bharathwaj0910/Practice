@@ -28,25 +28,25 @@
                 </div>
                 <div class="content">
                     {% if amazon_title %}
-                      <p>Title: {{ amazon_title }}</p>
-                      <p>Price: {{ amazon_price }}</p>
-                      <p>Product url: <a href={{ amazon_product_url }}, target="_blank">click me</a></p>
+                      <p>Product Name<br>{{ amazon_title }}</p>
+                      <p>Price<br>{{ amazon_price }}</p>
+                      <p>Product url<br><br><a href={{ amazon_product_url }}, target="_blank"><img src="/static/Amazon_icon.png" alt="Product link"></a><img src="/static/external_link_icon.png"></p>
                       {% else %}
-                      <p>No matching product found on Amazon.</p>
+                      <p><img src="/static/no_product_found.png"></img></p>
                     {% endif %}
                   </div>
             </div>
             <div class="box" id="box2">
                 <div class="navbar-flipkart">
-                    <img src="/static/flipkartlogo1.png" class="img-content" alt="amazon-logo" width="160" height="60">
+                    <img src="/static/flipkartlogo1.png" class="img-content" alt="flipkart-logo" width="160" height="60">
                 </div>
                 <div class="content">
                     {% if flipkart_title %}
-                    <p>Title: {{ flipkart_title }}</p>
-                    <p>Price: {{ flipkart_price }}</p>
-                    <p>Product url:<a href={{ flipkart_product_url }}, target="_blank">click me</a></p>
+                    <p>Product Name<br> {{ flipkart_title }}</p>
+                    <p>Price<br>{{ flipkart_price }}</p>
+                    <p>Product url<br><br><a href={{ flipkart_product_url }}, target="_blank"><img src="/static/flipkart_icon.png" alt="Product link"></a><img src="/static/external_link_icon1.png"></p>
                     {% else %}
-                    <p>No matching product found on Flipkart.</p>
+                    <p><img src="/static/no_product_found.png"></img></p>
                     {% endif %}
                 </div>
             </div>

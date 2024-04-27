@@ -46,10 +46,10 @@ def get_amazon_price(product_name):
                         break
                     elif b.lower() in title_text.lower():
                         if a.index(b) == len(a) - 1:
-                            if "pro" in tt or "max" in tt or "+" in tt or "lite" in tt:
+                            if "pro" in tt or "max" in tt or "+" in tt or "lite" in tt or "plus" in tt:
                                 if "pro" in tt and "pro" in pn or  "lite" in tt and "lite" in pn or "+" in tt and "+" in pn :
-                                    if "max" in tt and "max" in pn or "+" in tt and "+" in pn or "lite" in tt and "lite" in pn or "plus" in tt and "plus" in pn:
-                                        amazon_driver.quit()  # Close the browser
+                                    if "pro" in tt and "pro" in pn or "max" in tt and "max" in pn or "+" in tt and "+" in pn or "lite" in tt and "lite" in pn or "plus" in tt and "plus" in pn:
+                                        amazon_driver.quit()  
                                         return title_display, price_text,link_url
                                     continue
                                 print("hi")
@@ -57,7 +57,7 @@ def get_amazon_price(product_name):
                             amazon_driver.quit()  
                             return title_display, price_text,link_url
         print("No matching product found")
-        return "No matching product found", None, None
+        return None, None, None
     except Exception as e:
         print("An error occurred while fetching Amazon price:", e)
         return None, None,None
@@ -105,18 +105,17 @@ def get_flipkart_price(product_name):
                         break
                     elif b.lower() in tt or b.lower() in st:
                         if a.index(b) == len(a) - 1:
-                            if "pro" in tt or "max" in tt or "+" in tt or "lite" in tt:
-                                if "pro" in tt and "pro" in pn or  "lite" in tt and "lite" in pn or "+" in tt and "+" in pn :
-                                    if "max" in tt and "max" in pn or "+" in tt and "+" in pn or "lite" in tt and "lite" in pn or "plus" in tt and "plus" in pn:
-                                        flipkart_driver.quit()  # Close the browser
+                            if "pro" in tt or "max" in tt or "+" in tt or "lite" in tt or "plus" in tt: 
+                                if "pro" in tt and "pro" in pn or  "lite" in tt and "lite" in pn or "+" in tt and "+" in pn or "plus" in tt and "plus" in pn:
+                                    if "pro" in tt and "pro" in pn or "max" in tt and "max" in pn or "+" in tt and "+" in pn or "lite" in tt and "lite" in pn or "plus" in tt and "plus" in pn:
+                                        flipkart_driver.quit()  
                                         return title_display, price_text,link_url
                                     continue
-                                print("hi")
                                 continue
                             flipkart_driver.quit()  
                             return title_display, price_text,link_url
         print("No matching product found")
-        return "No matching product found", None , None
+        return None, None , None
     except Exception as e:
         print("An error occurred while fetching Flipkart price",e)
         return None, None, None

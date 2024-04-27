@@ -5,17 +5,6 @@ body{
     background-size: cover;
     background-position: center top;
     font-family: 'Open Sans', sans-serif;
-    /*margin: 0; 
-    height: 100%;
-    background-image: url('/bot.png'); 
-    background-size: cover;
-    background-position: center top;
-    height: 100vh; 
-    overflow: hidden; 
-    padding: 20px;
-    background-repeat: no-repeat;
-    z-index: -1;
-    font-family: 'Open Sans', sans-serif;*/
     
 }
 
@@ -125,18 +114,18 @@ body{
     padding: 0;
     cursor: pointer;
     height: 40px;
-    width: 30%; 
+	width: 30%; 
     max-width: 120px;
-    color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
     font-size: 20px;
-    background: transparent;
-    border-left: 1px solid #fff;
-    border-radius: 0 3px 3px 0;
+	background: transparent;
+	border-left: 1px solid #fff;
+	border-radius: 0 3px 3px 0;
     transition: background-color 0.4s ease;
 }
  .search button:hover {
-     background-color: rgb(184, 93, 253);
-     color: rgb(255, 255, 255);
+	 background-color: rgb(184, 93, 253);
+	 color: rgb(255, 255, 255);
 }
  .search button:active {
 	 box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
