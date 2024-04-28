@@ -133,26 +133,14 @@ body{
     position: relative;
 }
 
-.content img[src="/static/Amazon_icon.png"]{
-    height: 25px;
+.content img[src="/static/amazon_icon.png"]{
+    height: 50px;
     z-index: 1;
 
 }
 
 .content img[src="/static/flipkart_icon.png"]{
-    height: 40px;
+    height: 60px;
     z-index: 1;
 }
 
-.content img[src="/static/external_link_icon.png"]{
-    height: 15px;
-    position: absolute;
-    padding : -20px;
-    z-index: 2;
-}
-
-.content img[src="/static/external_link_icon1.png"]{
-    height: 15px;
-    position: absolute;
-    z-index: 2;
-}

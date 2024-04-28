@@ -1,3 +1,5 @@
+from multiprocessing import Process,Queue
+import queue
 from flask import Flask, request, render_template, redirect,session,url_for
 import sqlite3
 import os
@@ -109,8 +111,16 @@ def home():
 def report():
     if request.method == 'POST':
         search_query = request.form['query']
-        amazon_title, amazon_price, amazon_product_url = test.get_amazon_price(search_query)
-        flipkart_title, flipkart_price, flipkart_product_url = test.get_flipkart_price(search_query)
+        amazon_queue = Queue()
+        flipkart_queue = Queue()
+        p1 = Process(target=test.get_amazon_price, args=(search_query, amazon_queue))
+        p2 = Process(target=test.get_flipkart_price, args=(search_query, flipkart_queue))
+        p1.start()
+        p2.start()
+        amazon_result = amazon_queue.get()
+        flipkart_result = flipkart_queue.get()
+        amazon_title,amazon_price,amazon_product_url=amazon_result[0],amazon_result[1],amazon_result[2]
+        flipkart_title,flipkart_price,flipkart_product_url=flipkart_result[0],flipkart_result[1],flipkart_result[2]
     return render_template("report.html", amazon_title=amazon_title,amazon_price=amazon_price, amazon_product_url=amazon_product_url ,flipkart_title=flipkart_title, flipkart_price=flipkart_price, flipkart_product_url=flipkart_product_url)
 
 

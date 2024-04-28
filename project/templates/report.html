@@ -30,7 +30,7 @@
                     {% if amazon_title %}
                       <p>Product Name<br>{{ amazon_title }}</p>
                       <p>Price<br>{{ amazon_price }}</p>
-                      <p>Product url<br><br><a href={{ amazon_product_url }}, target="_blank"><img src="/static/Amazon_icon.png" alt="Product link"></a><img src="/static/external_link_icon.png"></p>
+                      <p>Product link<br><a href={{ amazon_product_url }}, target="_blank"><img src="/static/amazon_icon.png" alt="Product link"></a></p>
                       {% else %}
                       <p><img src="/static/no_product_found.png"></img></p>
                     {% endif %}
@@ -44,7 +44,7 @@
                     {% if flipkart_title %}
                     <p>Product Name<br> {{ flipkart_title }}</p>
                     <p>Price<br>{{ flipkart_price }}</p>
-                    <p>Product url<br><br><a href={{ flipkart_product_url }}, target="_blank"><img src="/static/flipkart_icon.png" alt="Product link"></a><img src="/static/external_link_icon1.png"></p>
+                    <p>Product link<br><a href={{ flipkart_product_url }}, target="_blank"><img src="/static/flipkart_icon.png" alt="Product link"></a></p>
                     {% else %}
                     <p><img src="/static/no_product_found.png"></img></p>
                     {% endif %}
