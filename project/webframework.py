@@ -133,7 +133,7 @@ def generate_token(length=6):
 def send_email(email, token):
     """Send an email with the password reset token."""
     sender_email = "bharathwaj0910@gmail.com"  
-    password = "gogw dojo ldis uiua" 
+    password = "go doo ld" 
     reset_link = f"http://localhost:5000/reset_password/{token}"
 
 
